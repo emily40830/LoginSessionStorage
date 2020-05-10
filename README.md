@@ -30,8 +30,7 @@ $ npm run dev
 
 **開啟瀏覽器到** [http://localhost:3000](http://localhost:3000) 
 
-## Start 
-測試帳號:
+**輸入測試帳號**
 ```
 email: tony@stark.com
 password: iamironman
@@ -54,6 +53,24 @@ password: iamironman
 - Express-Handlebars 作為渲染畫面的樣板引擎
 - body-parser 作為接收post回傳的request時的解析器
 - express-session 作為處理保持登入狀態時的資料記錄
+
+## 實作思路
+實作要點：
+0. 由於保持登入這樣的狀態是在成功登入的前提下才會發生，因此只有在成功登入時才會發送資料到session做儲存。
+
+1. 使用者進入主畫面時 app.get('/') 會依照session儲存資料物件的狀態來判斷之前是否登入過
+
+2. 如果之前有登入成功，則直接回傳登入後的畫面，並顯示上次登入的時間
+
+3. 如果之前沒有登入紀錄，則回傳要輸入email與password的畫面給使用者
+
+4. 只有在登入成功的狀態下才要回傳session物件
+
+5. 透過express-session這個package達到將資料儲存在req.session的作用
+
+6. 透過logout抹除儲存在session中的狀態，並將route指回主畫面，回到app.get('/')中的判斷式來回傳畫面
+
+
 
 ## 開發環境
 * Node.js: v10.16.0
