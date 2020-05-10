@@ -14,7 +14,7 @@
   justify-items: column;
   /* display: block; */
 }
-h2,h5{
+h1,h2,h4,h5{
   font-family: 'Kaushan Script', cursive !important;
   text-align:center;
 }
@@ -49,11 +49,14 @@ h2,h5{
   margin-top: 10px;
   align-items: center;
 }
-.btnReset{
-  margin-top: 10px;
-  text-align: center;
+
+.btn-based,.date{
+  display: flex;
+  justify-content: center;
+  margin-top: 20px;
 }
-#btnLogin{
+
+#btnLogin, #btnLogout{
   width: 100px;
   height: 40px;
   border-radius: 20px;
@@ -65,7 +68,7 @@ h2,h5{
   -webkit-tap-highlight-color: transparent;
 
 }
-#btnLogin:hover{
+#btnLogin:hover,#btnLogout:hover{
   background-color: rgb(252, 175, 146);
 }
 
@@ -75,3 +78,4 @@ h2,h5{
   text-align: center;
   font-family: Georgia, 'Times New Roman', Times, serif;
 }
+

@@ -1,4 +1,4 @@
-# Login interface
+# Login -保存登入狀態，透過session儲存狀態
 利用 Node.js + Express 打造簡易的登入驗證功能。
 
 

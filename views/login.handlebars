@@ -1,3 +1,15 @@
 <div class="container text-center">
   <h1>Welcome back, {{name}}!</h1>
 </div>
+<form action="/logout" method="get">
+  <div class="btn-based">
+    <button id="btnLogout" type="submit">
+      LogOut
+    </button>
+  </div>
+</form>
+{{#if loggin}}
+<div class="date">
+  <h5>last loggin time：{{logginTime}}</h5>
+</div>
+{{/if}}
